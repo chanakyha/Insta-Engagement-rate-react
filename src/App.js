@@ -1,7 +1,7 @@
 import { AiOutlineInstagram } from "react-icons/ai";
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
+import Rate from "./pages/Rate";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
         <AiOutlineInstagram fill="#fff" />
       </button>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/" element={<Search />} />
+        <Route path="/rate" element={<Rate />} />
       </Routes>
     </div>
   );

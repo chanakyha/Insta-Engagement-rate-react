@@ -1,26 +1,22 @@
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Search = () => {
   return (
     <div className="w-screen h-screen flex justify-center items-center">
       <div className="bg-[#fff] md:rounded-lg p-7 drop-shadow-2xl">
         <h1 className="text-2xl md:text-3xl text-center font-bold">
-          Login using Instagram Account
+          Search using Instagram Username
         </h1>
-        <div className="flex flex-col mt-7 m-7 space-y-5">
+        <div className="flex flex-col mt-7 m-7">
+          <p className="text-red-500">The Account must be Public</p>
           <input
             placeholder="Instagram Username"
             className="border px-3 py-2 rounded-md"
           />
-          <input
-            placeholder="Instagram Password"
-            className="border px-3 py-2 rounded-md"
-            type="password"
-          />
         </div>
         <div className="space-y-3 md:space-y-0 md:space-x-2 flex flex-col md:flex-row">
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            <Link to="/">Login</Link>
+            <Link to="/rate">Check Engagement Rate</Link>
           </button>
           <button
             onClick={() => {
@@ -36,4 +32,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Search;
