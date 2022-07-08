@@ -20,7 +20,7 @@ const Login = () => {
         </div>
         <div className="space-y-3 md:space-y-0 md:space-x-2 flex flex-col md:flex-row">
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Login
+            <Link to="/">Login</Link>
           </button>
           <button
             onClick={() => {
