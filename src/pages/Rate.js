@@ -10,11 +10,11 @@ const Rate = () => {
         <div className="md:w-1/2 w-screen mt-5">
           <div className="flex md:space-x-7 items-center">
             <img
-              crossOrigin="anonymous"
+              loading="lazy"
               onClick={() => {
-                window.location.href = `https://www.instagram.com/`;
+                window.location.href = `https://www.instagram.com/${data.username}`;
               }}
-              className="rounded-full w-32 h-32 border-4 border-[#fafafb] hover:scale-110 ease-in-out duration-300 cursor-pointer"
+              className="rounded-full w-32 h-32 border-4 hover:scale-110 ease-in-out duration-300 cursor-pointer"
               src={data.profile_pic_url_hd_proxy}
               alt="dp"
             />
@@ -43,7 +43,7 @@ const Rate = () => {
         </div>
       </div>
       <div className="w-screen mt-5 font-bold md:text-3xl text-xl">
-        <h1 className="text-center">Your Posts with Engagement Rate</h1>
+        <h1 className="text-center">Your Posts with Engagement Rate 🌟</h1>
         <div className="grid md:grid-cols-3 mt-7 w-screen gap-2 md:px-[12%]">
           {feed.media.map((post, index) => (
             <PostCard
