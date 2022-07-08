@@ -51,6 +51,7 @@ const Rate = () => {
               username={data.username}
               profilePic={data.profile_pic_url_hd_proxy}
               post={post}
+              followers={data.followers}
             />
           ))}
         </div>

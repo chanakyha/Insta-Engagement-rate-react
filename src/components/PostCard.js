@@ -1,4 +1,11 @@
-const PostCard = ({ post, username, profilePic }) => {
+import { AiFillStar } from "react-icons/ai";
+
+const PostCard = ({ post, username, profilePic, followers }) => {
+  const engagementCount = (
+    (parseInt(post.like) + parseInt(post.comment_count)) /
+    (parseInt(followers) * 100)
+  ).toFixed(4);
+
   return (
     <div className="rounded overflow-hidden border w-full bg-white md:mx-0 lg:mx-0">
       <div className="w-full flex justify-between p-3">
@@ -6,8 +13,14 @@ const PostCard = ({ post, username, profilePic }) => {
           <div className="rounded-full h-8 w-8 bg-gray-500 flex items-center justify-center overflow-hidden">
             <img src={profilePic} alt="profilepic" />
           </div>
-          <span className="pt-1 ml-2 font-bold text-sm">{username}</span>
+          <div className="flex items-center ">
+            <span className="pt-1 ml-2 font-bold text-sm">{username}</span>
+          </div>
         </div>
+        <span className="pt-1 ml-2 font-bold text-sm flex items-center">
+          <AiFillStar />
+          {engagementCount}
+        </span>
         <span className="px-2 hover:bg-gray-300 cursor-pointer rounded">
           <i className="fas fa-ellipsis-h pt-2 text-lg"></i>
         </span>
