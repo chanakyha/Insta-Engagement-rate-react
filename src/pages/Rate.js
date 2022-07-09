@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 
 const Rate = () => {
+  const apiKey = "5ced116772msh56c8206039a48cap128856jsn5bf96da24a33";
   let query = useLocation();
   console.log(query.search.slice(3));
 
@@ -32,7 +33,7 @@ const Rate = () => {
         3
       )}`,
       headers: {
-        "X-RapidAPI-Key": "3b3bb7ac2fmsh475820956a173c1p1d8bb5jsn4885bd26dbfa",
+        "X-RapidAPI-Key": apiKey,
         "X-RapidAPI-Host": "instagram-profile1.p.rapidapi.com",
       },
     };
@@ -43,7 +44,7 @@ const Rate = () => {
         setData(response.data);
       })
       .catch(function (error) {
-        toast.error(error.message);
+        console.error(error.message);
         // window.location.href = "/";
       });
   }, []);
@@ -57,8 +58,7 @@ const Rate = () => {
           3
         )}`,
         headers: {
-          "X-RapidAPI-Key":
-            "3b3bb7ac2fmsh475820956a173c1p1d8bb5jsn4885bd26dbfa",
+          "X-RapidAPI-Key": apiKey,
           "X-RapidAPI-Host": "instagram-profile1.p.rapidapi.com",
         },
       };
@@ -69,7 +69,7 @@ const Rate = () => {
           setFeed(response.data);
         })
         .catch(function (error) {
-          toast.error(error.messsage);
+          console.error(error.messsage);
           // window.location.href = "/";
         });
     }, 5000);

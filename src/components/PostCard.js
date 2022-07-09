@@ -5,8 +5,6 @@ const PostCard = ({ post, username, profilePic, followers }) => {
     (parseInt(post.like) + parseInt(post.comment_count)) /
     (parseInt(followers) * 100);
 
-  console.log(engagementCount);
-
   return (
     <div className="rounded overflow-hidden border w-full bg-white md:mx-0 lg:mx-0">
       <div className="w-full flex justify-between p-3">
