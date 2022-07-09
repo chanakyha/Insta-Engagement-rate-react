@@ -1,6 +1,13 @@
 import { AiFillStar } from "react-icons/ai";
 
-const PostCard = ({ post, username, profilePic, followers }) => {
+const PostCard = ({
+  post,
+  username,
+  profilePic,
+  followers,
+  setAverageRate,
+  averageRate,
+}) => {
   const engagementCount = (
     (parseInt(post.like) + parseInt(post.comment_count)) /
     (parseInt(followers) * 100)
@@ -42,7 +49,10 @@ const PostCard = ({ post, username, profilePic, followers }) => {
             <span className="font-medium mr-2">{username}</span> {post.caption}
           </div>
         </div>
-        <div className="text-sm mb-2 text-gray-400 cursor-pointer font-medium">
+        <div
+          onClick={() => (window.location.href = post.link_to_post)}
+          className="text-sm mb-2 text-gray-400 cursor-pointer font-medium"
+        >
           View all {post.comment_count} comments
         </div>
       </div>
