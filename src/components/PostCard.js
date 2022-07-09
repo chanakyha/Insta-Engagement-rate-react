@@ -1,17 +1,11 @@
 import { AiFillStar } from "react-icons/ai";
 
-const PostCard = ({
-  post,
-  username,
-  profilePic,
-  followers,
-  setAverageRate,
-  averageRate,
-}) => {
-  const engagementCount = (
+const PostCard = ({ post, username, profilePic, followers }) => {
+  const engagementCount =
     (parseInt(post.like) + parseInt(post.comment_count)) /
-    (parseInt(followers) * 100)
-  ).toFixed(4);
+    (parseInt(followers) * 100);
+
+  console.log(engagementCount);
 
   return (
     <div className="rounded overflow-hidden border w-full bg-white md:mx-0 lg:mx-0">
@@ -24,12 +18,9 @@ const PostCard = ({
             <span className="pt-1 ml-2 font-bold text-sm">{username}</span>
           </div>
         </div>
-        <span className="pt-1 ml-2 font-bold text-sm flex items-center">
+        <span className="hover:scale-110 cursor-pointer hover:text-white ease-in-out duration-300 hover:bg-red-500 rounded-lg px-2 box-shadow-2xl pt-1 ml-2 font-bold text-sm flex items-center">
           <AiFillStar />
           {engagementCount}
-        </span>
-        <span className="px-2 hover:bg-gray-300 cursor-pointer rounded">
-          <i className="fas fa-ellipsis-h pt-2 text-lg"></i>
         </span>
       </div>
       <img
